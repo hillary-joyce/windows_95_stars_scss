@@ -1,0 +1,44 @@
+@import "reset.scss";
+
+$main-color: red;
+$night-sky: #000821;
+$stars: #fffcef;
+
+body {
+  background-color: $night-sky;
+}
+
+p {
+  color: $main-color;
+}
+
+.star {
+  width: 4px;
+  height: 4px;
+  background-color: $stars;
+  border-radius: 100%;
+  animation-duration: 3s;
+  animation-name: slidein;
+  // animation-iteration-count: infinite;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 50%;
+    margin-top: 50%;
+  }
+
+  to {
+    margin-left: 0%;
+    margin-top: 0%;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/*Animation Considerations:
+- Stars must start small and get larger as they reach the edge of the page
+- they must repeat (so once it reaches the edge of the frame it starts back at the beginning)
+- Randomly select an angle for each star to move out at
+
+*/
