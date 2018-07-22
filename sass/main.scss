@@ -1,9 +1,11 @@
 @import "reset.scss";
 @import "animations.scss";
-
 $main-color: red;
-$night-sky: #000821;
+$night-sky: #000314;
 $stars: #fffcef;
+$heightwidth: random(10) + px;
+
+
 
 body {
   background-color: $night-sky;
@@ -13,17 +15,42 @@ p {
   color: $main-color;
 }
 
-.star {
-  width: 4px;
-  height: 4px;
-  background-color: $stars;
-  border-radius: 100%;
-  margin: 50vh 50vw;
-  display: inline-block;
-  animation: slidein 1s linear;
-  // animation-iteration-count: infinite;
+@for $i from 1 through 100{
+  .star_#{$i} {
+    $heightwidth: random(2) + px;
+    $startposx: random(3) + 50 +vw;
+    $startposy: random(3) + 50 +vh;
+    width: $heightwidth;
+    height: $heightwidth;
+    background-color: $stars;
+    border-radius: 100%;
+    display: inline-block;
+    margin: 50vh 50vw;
+    animation: slidein_#{$i} 4s random(12)/3+s cubic-bezier(1,.01,1,.65) infinite;
+    position: absolute;
+    z-index: $i;
+  }
 }
 
+// @for $i from 1 through 24{
+//   .star_#{$i} {
+//     $vw: random(45) + 5 + vw;
+//     margin: 50vh $vw;
+//   }
+// }
+//
+// @for $i from 73 through 100{
+//   .star_#{$i} {
+//     $vw: random(45) + 50 + vw;
+//     margin: 50vh $vw;
+//   }
+// }
+// .star {
+//   width: 2px;
+//   height: 2px;
+//
+//   animation: slidein 2s linear;
+// }
 /*Animation Considerations:
 - Stars must start small and get larger as they reach the edge of the page
 - they must repeat (so once it reaches the edge of the frame it starts back at the beginning)

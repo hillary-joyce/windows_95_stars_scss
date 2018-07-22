@@ -1,5 +1,71 @@
-@keyframes slidein {
-  100% {
-    transform: translate(-50vw, -60vh);
+@for $i from 1 through 12 {
+  $randomvh: random(50) - 100 + vh;
+  @keyframes slidein_#{$i} {
+    100% {
+      transform: translate(-50vw, $randomvh) scale(random(5) + 5);
+    }
+  }
+}
+
+@for $i from 13 through 24 {
+  $randomvh: random(50)+vh;
+  @keyframes slidein_#{$i} {
+    100% {
+      transform: translate(-50vw, $randomvh) scale(random(5) + 5);
+    }
+  }
+}
+
+@for $i from 25 through 36 {
+  $randomvw: random(50)+vw;
+  @keyframes slidein_#{$i} {
+    100% {
+      transform: translate($randomvw, -50vh) scale(random(5) + 5);
+    }
+  }
+}
+
+@for $i from 37 through 48 {
+  $randomvw: random(50) - 100 +vw;
+  @keyframes slidein_#{$i} {
+    100% {
+      transform: translate($randomvw, -50vh) scale(random(5) + 5);
+    }
+  }
+}
+
+@for $i from 49 through 60 {
+  $randomvw: random(50)+vw;
+  @keyframes slidein_#{$i} {
+    100% {
+      transform: translate($randomvw, 50vh) scale(random(5) + 5);
+    }
+  }
+}
+
+@for $i from 61 through 72 {
+  $randomvw: random(50) - 100 +vw;
+  @keyframes slidein_#{$i} {
+    100% {
+      transform: translate($randomvw, 50vh) scale(random(5) + 5);
+    }
+  }
+}
+
+@for $i from 73 through 84 {
+  $randomvh: random(50)+vh;
+  @keyframes slidein_#{$i} {
+    100% {
+      transform: translate(50vw, $randomvh) scale(random(5) + 5);
+    }
+  }
+}
+
+@for $i from 85 through 100 {
+  $randomvh: random(50) - 100 + vh;
+  @keyframes slidein_#{$i} {
+    100% {
+      transform: translate(50vw, $randomvh) scale(random(5) + 5);
+    }
   }
 }
