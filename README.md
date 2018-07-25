@@ -1,4 +1,5 @@
 # Windows 95 Star Screensaver
+[Check it Out](https://hillary-joyce.github.io/windows_stars_css/)
 In the age of reboots, I felt it was time for the most classic screensaver of all time to get it's own gritty remake.
 This is my attempt to re-create the classic Windows 95 stars screensaver using css animations &amp; sass
 
